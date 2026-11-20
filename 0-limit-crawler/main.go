@@ -17,7 +17,7 @@ import (
 
 // Crawl uses `fetcher` from the `mockfetcher.go` file to imitate a
 // real crawler. It crawls until the maximum depth has reached.
-const rateLimit = (time.Second * 3) / 1
+const rateLimit = time.Second
 
 func Crawl(url string, depth int, wg *sync.WaitGroup, throttle <-chan time.Time) {
 	defer wg.Done()
